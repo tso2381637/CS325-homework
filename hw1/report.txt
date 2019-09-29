@@ -1,0 +1,34 @@
+Q: What's the best-case, worst-case, and average-case time complexities of quicksort.
+   Briefly explain each case.
+
+   Ans: the best-case is all have been sorted which complexities is O(nlogn)
+        the average-case complexities is O(nlogn)
+        the worst-case is the sort is all reversed which complexities is O(n^2)
+
+
+Q: What's the best-case, worst-case, and average-case time complexities? Briefly explain.(qselect)
+
+    Ans: the best-case is we pick the pivot which is the target number then the complexities is O(n)
+         the average-case complexities is also O(n)
+         the worst-case is we pick to the last pivot then the complexities is O(n^2)
+
+Q: What are the time complexities for the operations implemented?
+
+    Ans: Sorted function should be O(nlogn)
+         insert function should be O(n)
+         search function should be O(n)
+
+Debriefing (required!): --------------------------
+
+1. Approximately how many hours did you spend on this assignment?
+   Ans: 12 hours
+
+2. Would you rate it as easy, moderate, or difficult?
+   Ans: moderate
+
+3. Did you work on it mostly alone, or mostly with other people?
+   Ans: mostly alone
+4. How deeply do you feel you understand the material it covers (0%–100%)?
+   Ans: 90%
+5. Any other comments?
+   Ans: more hint for implement
