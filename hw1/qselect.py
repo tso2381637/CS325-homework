@@ -1,6 +1,8 @@
 import random
 def qselect(order, array):
     pivot = array[random.randint(0,len(array)-1)]
+    right = []
+    left = []
     array.remove(pivot)
     for e in array:
         if e<pivot:
