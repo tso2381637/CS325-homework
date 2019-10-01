@@ -15,8 +15,8 @@ Q: What's the best-case, worst-case, and average-case time complexities? Briefly
 Q: What are the time complexities for the operations implemented?
 
     Ans: Sorted function should be O(nlogn)
-         insert function should be O(n)
-         search function should be O(n)
+         insert function should be O(nlogn)
+         search function should be O(nlogn)
 
 Debriefing (required!): --------------------------
 
