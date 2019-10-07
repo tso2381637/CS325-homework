@@ -1,6 +1,3 @@
-from qsort import *
-import random
-random.seed(1325)
 def longest(a):
 	left = count_deepth(a[0])
 	right = count_deepth(a[2])
