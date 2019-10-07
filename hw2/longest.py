@@ -12,8 +12,8 @@ def count_deepth(a):
 		count = 0
 		left = count_deepth(a[0])
 		right = count_deepth(a[2])
-		longest = max([left[1],right[1],count])
 		count += max(left[0],right[0]) + 1
+		longest = max([left[1],right[1],count])
 		return [count,longest]
 
 
