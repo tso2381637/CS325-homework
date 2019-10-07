@@ -1,3 +1,6 @@
+from qsort import *
+import random
+random.seed(1325)
 def longest(a):
 	left = count_deepth(a[0])
 	right = count_deepth(a[2])
@@ -17,4 +20,3 @@ def count_deepth(a):
 		longest = max(left[1],right[1])
 		count += max(left[0],right[0]) + 1
 		return [count,longest]
-
