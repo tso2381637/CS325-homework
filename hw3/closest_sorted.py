@@ -8,6 +8,7 @@ def find(a,t,k):
 	i = pivot - 1
 	j = pivot
 	result = [None] * len(a)
+	result2 = []
 	while i>=0 and j < len(a):
 		if abs(a[i] - t) <= abs(a[j] - t) and k>0:
 			result[i] = 1
@@ -28,5 +29,5 @@ def find(a,t,k):
 			k-=1
 	for index,value in enumerate(result):
 		if value == 1:
-			yield(a[index])
-
+			result2.append(a[index])
+	return result2
