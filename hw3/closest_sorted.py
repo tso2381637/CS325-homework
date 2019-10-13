@@ -18,16 +18,17 @@ def find(a,t,k):
 			j+=1
 			k-=1
 
-	while(k>0):
+	if k>0:
 		if j==len(a):
-			result[i] = 1
-			i-=1
-			k-=1
+			while(k):
+				result[i]=1
+				i-=1
+				k-=1
 		else:
-			result[j+pivot]=1
-			j+=1
-			k-=1
-
+			while(k):
+				result[j]=1
+				j+=1
+				k-=1
 	for index,value in enumerate(result):
 		if value == 1:
 			result2.append(a[index])
