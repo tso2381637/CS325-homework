@@ -1,0 +1,29 @@
+0. What's your name?
+
+	Ans: YUN-YI,TSENG (Eason)
+
+1. Approximately how many hours did you spend on this assignment?
+
+	Ans: 4 hours
+
+2. Would you rate it as easy, moderate, or difficult?
+
+	Ans: moderate
+
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+
+   Ans: myself
+
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+	
+   Ans: 80% but almost 100% after watch the video
+
+5. Which part(s) of the course you like the most so far?
+
+	Ans: introduce some python tricks, show other people's code and share the job experience
+
+6. Which part(s) of the course you dislike the most so far?	
+
+	ans: quiz
