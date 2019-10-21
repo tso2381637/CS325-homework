@@ -3,10 +3,12 @@ def ksmallest(k, a):
 	a = list(a)
 	result = a[:k]
 	heapq.heapify(result)
+	result.sort()
 	for i in a[k:]:
 		if i<result[k-1]:
 			result[k-1] = i
 			result.sort()
+			print(i,result)
 
 	return result
 
@@ -18,3 +20,4 @@ def ksmallest(k, a):
 
 #print(ksmallest(6, [10, 2, 9, 3, 7, 8, 11, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
 
+print(ksmallest(10, [10, 2, 9, 3, 7, 3, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
