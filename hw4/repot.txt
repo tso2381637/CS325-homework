@@ -1,0 +1,4 @@
+0. There are two methods for building a heap from an unsorted array:
+   (1) insert each element into the heap  --- O(nlogn) -- heapq.heappush()
+   (2) heapify (top-down)                 --- O(n)     -- heapq.heapify()
+
