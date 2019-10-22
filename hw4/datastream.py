@@ -13,16 +13,16 @@ def ksmallest(k, a):
 					break
 				elif i<=result[j] and i>=result[j+1]:
 					result.insert(j+1,i)
-
+					break
 	result.reverse()
 	return result
 
 
 
-#print(ksmallest(3, range(1000000, 0, -1)))
+# print(ksmallest(3, range(1000000, 0, -1)))
 
-#print(ksmallest(4, [10, 2, 9, 3, 7, 8, 11, 5, 7]))
+# print(ksmallest(4, [10, 2, 9, 3, 7, 8, 11, 5, 7]))
 
-#print(ksmallest(6, [10, 2, 9, 3, 7, 8, 11, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
+# print(ksmallest(6, [10, 2, 9, 3, 7, 8, 11, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
 
-#print(ksmallest(10, [10, 2, 9, 3, 7, 3, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
+# print(ksmallest(10, [10, 2, 9, 3, 7, 3, 9, 3, 7, 8, 11, 8, 11, 5, 7]))
