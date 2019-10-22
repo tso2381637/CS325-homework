@@ -1,9 +1,0 @@
-import heapq
-import timeit
-import random
-
-if __name__ == "__main__":
-	
-	a = random.sample(range(0,10000),1000000)
-
-	timeit.timeit(heapq.heapify(a))
