@@ -1,0 +1,72 @@
+0. There are two methods for building a heap from an unsorted array:
+   (1) insert each element into the heap  --- O(nlogn) -- heapq.heappush()
+   (2) heapify (top-down)                 --- O(n)     -- heapq.heapify()
+
+	+-----+-------------------------------+-----------------------------+
+	|     | heapq.heappush()              | heapq.heapify()             |
+	+-----+-------------------------------+-----------------------------+
+	| (a) | heap cost logn and do n times | n/2+n/4+n/8... becomes O(n) |
+	+-----+-------------------------------+-----------------------------+
+	| (b) |   n          time             |   n           time          |
+	|     | 1000 0.0004248619079589844    | 1000 0.00011420249938964844 |
+	|     | 2000 0.0007889270782470703    | 2000 6.175041198730469e-05  |
+	|     | 4000 0.0029382705688476562    | 4000 8.7738037109375e-05    |
+	|     | 8000 0.005858898162841797     | 8000 8.797645568847656e-05  |
+	|     | 16000 0.013760089874267578    | 16000 6.008148193359375e-05 |
+	+-----+-------------------------------+-----------------------------+
+	| (c) | still O(nlogn)                | still O(n)                  |
+	+-----+-------------------------------+-----------------------------+
+
+
+1. Q: What is the complexity? Write down the detailed analysis in report.txt.
+	
+	+---+-----------------+
+	|   | time complexity |
+	+---+-----------------+
+	| a | O(n^2logn)      |
+	+---+-----------------+
+	| b | O(n^2)          |
+	+---+-----------------+
+	| c | O(nlogn)        |
+	+---+-----------------+ 
+	
+2. Q: What is your complexity? Write down the detailed analysis in report.txt.
+	
+	Ans: O(nlogn) because each merge do O(n) and do logn level so still O(nlogn)
+	
+4. (optional) Summarize the time complexities of the basic operations (push, pop-min, peak, heapify) for these implementations of priority queue:
+   
+   (a) unsorted array
+   (b) sorted array (highest priority first)
+   (c) reversly sorted array (lowest priority first)
+   (d) linked list
+   (e) binary heap
+
+
+0. What's your name?
+1. Approximately how many hours did you spend on this assignment?
+
+	Ans: 4 hours
+
+2. Would you rate it as easy, moderate, or difficult?
+
+	Ans: moderate on q3, difficult on else, but still accepted 
+
+3. Did you work on it mostly alone, or mostly with other people?
+   Note you are encouraged to discuss with your classmates, 
+   but each students should submit his/her own code.
+
+   Ans: alone
+
+4. How deeply do you feel you understand the material it covers (0%-100%)?
+
+	Ans: 90%
+
+5. Which part(s) of the course you like the most so far?
+
+	Ans: discuss interview
+
+6. Which part(s) of the course you dislike the most so far?
+
+	Ans: verify the time of function
+
