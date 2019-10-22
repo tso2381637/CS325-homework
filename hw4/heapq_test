@@ -1,0 +1,26 @@
+import heapq
+import time
+import random
+
+if __name__ == "__main__":
+	
+	print('----------heappush----------')
+	n = 1000
+	while(n<=16000):
+		a = random.sample(range(0,n),n)
+		result = []
+		start = time.time()
+		for i in a:
+			heapq.heappush(result,i)
+		print(n,time.time()-start)
+		n*=2
+	print('----------heapify----------')
+	n = 1000
+	while(n<=16000):
+		a = random.sample(range(0,1000),1000)
+		start = time.time()
+		heapq.heapify(a)
+		print(n,time.time()-start)
+		n*=2
+	
+	
