@@ -1,0 +1,30 @@
+0. (Optional) Is Fibonacci REALLY O(n)?
+   Hint: the value of f(n) itself grows exponentially.
+   Ans: it is sqrt(5)+1 / 2
+
+1. 
+	Q: What's the complexity?
+	Ans: O(n)
+
+2. 
+	Qa: What's the complexity of this DP?
+	Ans: O(n^2)
+
+	Qb: What's the name of this famous number series?
+	Ans: Catalan number
+
+
+0. What's your name?
+	Yun-Yi Tseng
+1. Approximately how many hours did you spend on this assignment?
+	2 hours
+2. Would you rate it as easy, moderate, or difficult?
+	difficult
+3. Did you work on it mostly alone, or mostly with other people?
+	mostly alone
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+	80%
+5. Which part(s) of the course you like the most so far?
+	Introduce math
+6. Which part(s) of the course you dislike the most so far?
+	Null

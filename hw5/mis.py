@@ -11,14 +11,12 @@ def max_wis(a,max_num=None):
 		if a[n-1]>0:
 			b += a[n-1]
 		if b>c :
-			print('b')
 			x = blst.copy()
 			x.append(a[n-1])
 			max_num[n] = (b, x)
 		else:
-			print('c')
 			max_num[n] = (c, clst)
-		#print(max_num)
+		
 
 	return max_num[n]
 		
