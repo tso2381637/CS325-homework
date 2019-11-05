@@ -1,0 +1,33 @@
+1. Unbounded Knapsack
+	(a) pick the most valueable
+	(b) 
+	(c) f(w) = opt(w-wi) +v_i
+	(d) for i to n
+	(e) opt[w] = 0
+	(f) time complexities O(nw), speace complexities O(n)
+
+2. Bounded Knapsack
+	(a) take them all
+	(b) 
+	(c) f(w) = max(opt[w-wi][i-1]+vi,opt[w][i-1])
+	(d) for i to n
+	(e) opt[0][i] = 0, opt[w][0] =0
+	(f) time complexities O(nw), speace complexities O(nw)
+
+
+
+0. What's your name?
+	Yun-Yi Tseng
+1. Approximately how many hours did you spend on this assignment?
+	10 hours
+2. Would you rate it as easy, moderate, or difficult?
+	difficult
+3. Did you work on it mostly alone, or mostly with other people?
+	alone
+4. How deeply do you feel you understand the material it covers (0%-100%)? 
+	80%
+5. Which part(s) of the course you like the most so far?
+	everything before the DP question
+6. Which part(s) of the course you dislike the most so far?
+	implenment the idea, do dp homework
+
