@@ -41,8 +41,8 @@ def kmergesort(m, k=2):
         return m
     split = (length-1)//k + 1
     k_lists = [kmergesort(m[i:i+split],k) for i in range(0, length, split)] # no empty sublists
-    return list(merge(*k_lists))
-    #return list(mymerge(k_lists))
+    #return list(merge(*k_lists))
+    return list(mymerge(k_lists))
     #return list(mymerge2(k_lists))
     #return list(mymerge3(k_lists))
 
@@ -50,6 +50,6 @@ if __name__ == "__main__":
     #print(kmergesort([4,1,5,2,6,3,7,0], 3))
     #print(kmergesort([random.randint(0,100) for _ in range(5)], 3))
     l = [random.randint(0,100) for _ in range(20)]
-    for k in range(2, 25):
+    for k in range(4, 5):
         print("k=", k, kmergesort(l, k)) 
 

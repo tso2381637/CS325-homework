@@ -42,39 +42,39 @@ def solution3(i, a, back):
 
 if __name__ == "__main__":
 
-    print(max_wis([7,8,5]))
-    print(max_wis([7,13,5]))
-    print(max_wis([-7,-5]))
-    print(max_wis([0,-5]))
+    # print(max_wis([7,8,5]))
+    # print(max_wis([7,13,5]))
+    # print(max_wis([-7,-5]))
+    # print(max_wis([0,-5]))
 
-    print(max_wis2([7,8,5]))
-    print(max_wis2([7,13,5]))
-    print(max_wis2([-7,-5]))
-    print(max_wis2([0,-5]))
+    #print(max_wis2([7,8,5]))
+    # print(max_wis2([7,13,5]))
+    # print(max_wis2([-7,-5]))
+    # print(max_wis2([0,-5]))
 
-    print(max_wis3([7,8,5]))
-    print(max_wis3([7,13,5]))
-    print(max_wis3([-7,-5]))
-    print(max_wis3([0,-5]))
+    # print(max_wis3([7,8,5]))
+    # print(max_wis3([7,13,5]))
+    # print(max_wis3([-7,-5]))
+    # print(max_wis3([0,-5]))
 
     print(max_wis2([5, 6, 8, -9, 3, 4, 7, 2, 0]))
-    print(max_wis3([5, 6, 8, -9, 3, 4, 7, 2, 0]))
+    # print(max_wis3([5, 6, 8, -9, 3, 4, 7, 2, 0]))
 
 
-    import sys
-    sys.setrecursionlimit(1000000)
+    # import sys
+    # sys.setrecursionlimit(1000000)
 
-    lst = list(range(10000))
+    # lst = list(range(10000))
 
-    from time import time
-    t= time()
-    a = max_wis(lst)
-    print(time() -t) 
-    t= time()
-    a = max_wis2(lst)
-    print(time() -t) 
-    t= time()
-    b = max_wis3(lst)
-    print(time() -t) 
-    print(a==b)
+    # from time import time
+    # t= time()
+    # a = max_wis(lst)
+    # print(time() -t) 
+    # t= time()
+    # a = max_wis2(lst)
+    # print(time() -t) 
+    # t= time()
+    # b = max_wis3(lst)
+    # print(time() -t) 
+    # print(a==b)
 

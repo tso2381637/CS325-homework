@@ -1,37 +1,40 @@
 
 
-def best(w, items, opt=None,):
-	print(w,items)
-	if opt is None:
-		opt = {}
+def best(limit,items2):
+    items = sum( ([(wt, val,n)]*n for wt, val,n in items2), [])
+    table = [[0 for w in range(limit + 1)] for j in xrange(len(items) + 1)]
+ 
+    for j in xrange(1, len(items) + 1):
+        wt, val,n = items[j-1]
+        for w in xrange(1, limit + 1):
+            if wt > w:
+                table[j][w] = table[j-1][w]
+            else:
+                table[j][w] = max(table[j-1][w],
+                                  table[j-1][w-wt] + val)
+ 
+    a = []
+    w = limit
+    for j in range(len(items), 0, -1):
+        was_added = table[j][w] != table[j-1][w]
+        if was_added:
+            wt, val,n = items[j-1]
+            a.append(items[j-1])
+            w -= wt
+    
+  
+    rsum = 0
+    for i in range(len(a)):
+         rsum += a[i][1]   
+    c=[0 for x in range(len(items2))]
+    for i in range(len(items2)):
+        for j in range(len(a)):
+            if a[j][0]== items2[i][0] and a[j][1]== items2[i][1] and a[j][2]== items2[i][2]:
+                c[i]+=1
 
-	for i in range(len(items)-1,0):
-		if w in opt and i in opt[w]:
-			return opt[w][i]
-		w_i, v_i, c_i = items[i]
 
-		if w >= w_i:
-			number = min(w//w_i,c_i)
-
-			t, t_i = best(w-(number*w_i),items[:-1],opt)
-			nt, nt_i = best(w,items[:-1],opt)
-			if t+(number*v_i) >= nt:
-				t_i[i] += number
-				opt[w][i] = t+(number*v_i),t_i[i]
-			else:
-				opt[w][i] = nt, nt_i
-		elif w==0:
-
-			opt[w][i] = 0,[0]*len(items)
-
-	return opt[w][i]
-
-
-best(3, [(1, 5, 2), (1, 5, 3)])
-#best(20, [(1, 10, 6), (3, 15, 4), (2, 10, 3)])
-#best(92, [(1, 6, 6), (6, 15, 7), (8, 9, 8), (2, 4, 7), (2, 20, 2)])
-
-
-		
-
+    result ={}
+    result[limit] = (rsum,c)
+    
+    return result[limit]
 
