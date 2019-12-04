@@ -96,14 +96,14 @@ def kbest(x, k):
 		h,visted = [],set()
 		
 		for s in range(i,j):
+			
 			_kbest(i,s)
 			_kbest(s+1,j)
-
-		h=[(-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)) for s in range(i,j)]
+			h.append((-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)))
 			
 		heapify(h)
 		if x[i] + x[j] in allowed:
-			_kbest(i,j-1)
+			_kbest(i+1,j-1)
 			trypush_unary(0)
 
 		
@@ -144,4 +144,4 @@ if __name__ == '__main__':
 	#print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
 	#bprint(kbest('ACAGU',6))
 	#print(kbest('AGGCAUCAAACCCUGCAUGGGAGCG',10))
-	kbest('UCAGAGGCAUCAAACCU',300)
+	print(kbest('UCAGAGGCAUCAAACCU',300))
