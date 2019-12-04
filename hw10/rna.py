@@ -83,9 +83,9 @@ def kbest(x, k):
 		
 		
 		def trypush_binary(s,p,q):
-			if p < len(topk[i,s]) and q <len(topk[s+1,j]) and (s,p,q) not in visted:
+			if p < len(topk[i,s]) and q <len(topk[s+1,j]):
 				heappush(h,(-(topk[i,s][p][0] + topk[s+1,j][q][0]),(s,p,q)))
-				visted.add((s,p,q))
+				
 
 		def trypush_unary(p):			
 			if p<len(topk[i+1,j-1]):
@@ -93,7 +93,7 @@ def kbest(x, k):
 		if (i, j) in topk:
 			return topk[i,j]
 		
-		h,visted = [],set()
+		h = []
 		
 		for s in range(i,j):
 			
@@ -102,6 +102,7 @@ def kbest(x, k):
 			h.append((-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)))
 			
 		heapify(h)
+
 		if x[i] + x[j] in allowed:
 			_kbest(i+1,j-1)
 			trypush_unary(0)
