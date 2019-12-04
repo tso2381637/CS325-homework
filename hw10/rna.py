@@ -91,17 +91,15 @@ def kbest(x, k):
 			if p<len(topk[i+1,j-1]):
 				heappush(h,(-(topk[i+1,j-1][p][0]+1),(p,)))
 		if (i, j) in topk:
-			#print(i,j)
 			return topk[i,j]
 		
 		h,visted = [],set()
 		
 		for s in range(i,j):
-			
 			_kbest(i,s)
 			_kbest(s+1,j)
-			#print(i,j,s,topk[i,s-1],topk[s+1,j-1])
-			h.append((-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)))
+
+		h=[(-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)) for s in range(i,j)]
 			
 		heapify(h)
 		if x[i] + x[j] in allowed:
@@ -121,10 +119,9 @@ def kbest(x, k):
 				p = indices[0]
 				if (-score,"(%s)" % topk[i+1,j-1][p][1]) not in topk[i,j]:
 					topk[i,j].append((-score,"(%s)" % topk[i+1,j-1][p][1]))
-				#print(i,j,topk[i,j])
 					trypush_unary(p+1)
 		
-		
+		#print(i,j,len(topk[i,j]))
 
 	topk = defaultdict(list)
 	n = len(x)
@@ -145,5 +142,6 @@ if __name__ == '__main__':
 	# print(total('GAUGCCGUGUAGUCCAAAGACUUC'))
 	# print(total('ACAGU'))
 	#print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
-	print(kbest('ACAGU',6))
+	#bprint(kbest('ACAGU',6))
 	#print(kbest('AGGCAUCAAACCCUGCAUGGGAGCG',10))
+	kbest('UCAGAGGCAUCAAACCU',300)
