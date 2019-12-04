@@ -76,8 +76,7 @@ def total(x):
 	return _total(0,n-1)
 
 def kbest(x, k):
-	
-	
+		
 	
 	def _kbest(i,j):
 		
