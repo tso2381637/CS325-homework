@@ -108,9 +108,8 @@ def kbest(x, k):
 			_kbest(i,j-1)
 			trypush_unary(0)
 
-		for _ in range(k):
-			if h == []:
-				break
+		
+		while not(h == [] or len(topk[i,j])==k):
 			score, indices= heappop(h)
 			try:
 				s,p,q = indices
@@ -124,7 +123,7 @@ def kbest(x, k):
 					topk[i,j].append((-score,"(%s)" % topk[i+1,j-1][p][1]))
 				#print(i,j,topk[i,j])
 					trypush_unary(p+1)
-		#print(i,j,topk[i,j])
+		
 		
 
 	topk = defaultdict(list)
@@ -145,5 +144,6 @@ if __name__ == '__main__':
 	# print(best('AGGCAUCAAACCCUGCAUGGGAGCG'))
 	# print(total('GAUGCCGUGUAGUCCAAAGACUUC'))
 	# print(total('ACAGU'))
-	print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
+	#print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
 	#print(kbest('ACAGU',6))
+	#print(kbest('AGGCAUCAAACCCUGCAUGGGAGCG',10))
