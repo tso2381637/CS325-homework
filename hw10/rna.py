@@ -8,6 +8,7 @@ def best(x):
 		if(i, j) in opt:
 			return opt[i, j]
 		curr = 0
+		back[i,j] = -1
 		for k in range(i,j):
 			if x[k] + x[j] in allowed:
 				if _best(i,k-1) + _best(k+1,j-1) + 1 > curr:
@@ -28,9 +29,9 @@ def best(x):
 			return ''
 		k = back[i,j]
 		if k == -1:
-			return '%s.' % solution(i,j-1)
+			return "%s." % solution(i,j-1)
 		else:
-			return solution(i, k-1) + '(%s)' % solution(k+1,j-1)
+			return solution(i, k-1) + "(%s)" % solution(k+1,j-1)
 
 	opt = defaultdict(int)
 	n = len(x)
@@ -38,7 +39,6 @@ def best(x):
 	for i in range(n):
 		opt[i, i] = 0
 		opt[i, i-1] = 0
-
 	return _best(0, n-1),solution(0, n-1)
 
 def total(x):
@@ -145,5 +145,5 @@ if __name__ == '__main__':
 	# print(best('AGGCAUCAAACCCUGCAUGGGAGCG'))
 	# print(total('GAUGCCGUGUAGUCCAAAGACUUC'))
 	# print(total('ACAGU'))
-
-	print(kbest('ACAGU',6))
+	print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
+	#print(kbest('ACAGU',6))
