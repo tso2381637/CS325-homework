@@ -76,59 +76,49 @@ def total(x):
 	return _total(0,n-1)
 
 def kbest(x, k):
-		
+	
+	
 	
 	def _kbest(i,j):
 		
 		
 		def trypush_binary(s,p,q):
-			if p < len(topk[i,s-1]) and q <len(topk[s+1,j-1]):
-				if x[s] + x[j] in allowed:
-					heappush(h,(-(topk[i,s-1][p][0] + topk[s+1,j-1][q][0] + 1),(s,p,q,1)))
-				else:
-					heappush(h,(-(topk[i,s-1][p][0] + topk[s+1,j-1][q][0]),(s,p,q,0)))
+			if p < len(topk[i,s]) and q <len(topk[s+1,j]) and (s,p,q) not in visted:
+				heappush(h,(-(topk[i,s][p][0] + topk[s+1,j][q][0]),(s,p,q)))
+				visted.add((s,p,q))
 
 		def trypush_unary(p):			
-			if p<len(topk[i,j-1]):
-				heappush(h,(-(topk[i,j-1][p][0]),(p,)))
+			if p<len(topk[i+1,j-1]):
+				heappush(h,(-(topk[i+1,j-1][p][0]+1),(p,)))
 		if (i, j) in topk:
 			return topk[i,j]
 		
-		h = []
+		h,visted = [],set()
 		
 		for s in range(i,j):
 			
-			_kbest(i,s-1)
-			_kbest(s+1,j-1)
-			if x[s] + x[j] in allowed:
-				h.append((-(topk[i,s-1][0][0] + topk[s+1,j-1][0][0] + 1), (s,0,0,1)))
-			else:
-				h.append((-(topk[i,s-1][0][0] + topk[s+1,j-1][0][0]), (s,0,0,0)))
+			_kbest(i,s)
+			_kbest(s+1,j)
+			h.append((-(topk[i,s][0][0] + topk[s+1,j][0][0]), (s,0,0)))
 			
 		heapify(h)
-
-		_kbest(i,j-1)
-		trypush_unary(0)
+		if x[i] + x[j] in allowed:
+			_kbest(i+1,j-1)
+			trypush_unary(0)
 
 		
 		while not(h == [] or len(topk[i,j])==k):
 			score, indices= heappop(h)
 			try:
-				s,p,q,paired = indices
-				if paired == 1:
-					if (-score,topk[i,s-1][p][1]+ "(%s)" % topk[s+1,j-1][q][1]) not in topk[i,j]:
-						topk[i,j].append((-score,topk[i,s-1][p][1]+ "(%s)" % topk[s+1,j-1][q][1]))							
-				else:
-					if (-score,topk[i,s-1][p][1]+ ".%s." % topk[s+1,j-1][q][1]) not in topk[i,j]:
-						topk[i,j].append((-score,topk[i,s-1][p][1]+ ".%s." % topk[s+1,j-1][q][1]))	
-				
-				trypush_binary(s,p+1,q)
-				trypush_binary(s,p,q+1)		
-
+				s,p,q = indices
+				if (-score,topk[i,s][p][1]+topk[s+1,j][q][1]) not in topk[i,j]:
+					topk[i,j].append((-score,topk[i,s][p][1]+topk[s+1,j][q][1]))	
+					trypush_binary(s,p+1,q)
+					trypush_binary(s,p,q+1)
 			except:
 				p = indices[0]
-				if (-score, topk[i,j-1][p][1] + ".") not in topk[i,j]:
-					topk[i,j].append((-score, topk[i,j-1][p][1] + "."))
+				if (-score,"(%s)" % topk[i+1,j-1][p][1]) not in topk[i,j]:
+					topk[i,j].append((-score,"(%s)" % topk[i+1,j-1][p][1]))
 					trypush_unary(p+1)
 		
 		#print(i,j,len(topk[i,j]))
