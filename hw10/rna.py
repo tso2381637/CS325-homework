@@ -113,13 +113,13 @@ def kbest(x, k):
 				s,p,q = indices
 				if (-score,topk[i,s][p][1]+topk[s+1,j][q][1]) not in topk[i,j]:
 					topk[i,j].append((-score,topk[i,s][p][1]+topk[s+1,j][q][1]))	
-					trypush_binary(s,p+1,q)
-					trypush_binary(s,p,q+1)
+				trypush_binary(s,p+1,q)
+				trypush_binary(s,p,q+1)
 			except:
 				p = indices[0]
 				if (-score,"(%s)" % topk[i+1,j-1][p][1]) not in topk[i,j]:
 					topk[i,j].append((-score,"(%s)" % topk[i+1,j-1][p][1]))
-					trypush_unary(p+1)
+				trypush_unary(p+1)
 		
 		#print(i,j,len(topk[i,j]))
 
