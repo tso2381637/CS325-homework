@@ -145,5 +145,5 @@ if __name__ == '__main__':
 	# print(total('GAUGCCGUGUAGUCCAAAGACUUC'))
 	# print(total('ACAGU'))
 	#print(best('CGAGGUGGCACUGACCAAACACCACCGAAAC'))
-	#print(kbest('ACAGU',6))
+	print(kbest('ACAGU',6))
 	#print(kbest('AGGCAUCAAACCCUGCAUGGGAGCG',10))
